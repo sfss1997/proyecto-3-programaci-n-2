@@ -5,11 +5,15 @@
  */
 package proyecto3_programacion2;
 
+import Domain.Configuration;
+import Logic.ReadFiles;
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -30,8 +34,13 @@ public class Proyecto3_Programacion2 extends Application {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ParseException {
         launch(args);
+        
+//        Configuration configuration = new Configuration();
+//        ReadFiles.readJsonFiles(1).toString();
+//        
+//        configuration.toString();
     }
     
 }
