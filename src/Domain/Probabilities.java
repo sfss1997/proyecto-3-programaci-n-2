@@ -10,7 +10,7 @@ package Domain;
  * @author fabian
  */
 public class Probabilities {
-     private int stone;
+    private int stone;
     private int zombie;
     private int chimera;
 
@@ -51,6 +51,7 @@ public class Probabilities {
     public String toString() {
         return "Probabilities{" + "stone=" + stone + ", zombie=" + zombie + ", chimera=" + chimera + '}';
     }
+
     
     
 }

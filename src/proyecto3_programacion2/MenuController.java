@@ -5,6 +5,7 @@
  */
 package proyecto3_programacion2;
 
+import Logic.ReadFiles;
 import java.io.IOException;
 import java.net.URL;
 import java.util.LinkedList;
@@ -20,6 +21,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -30,10 +32,12 @@ public class MenuController implements Initializable {
     @FXML
     ComboBox difficultyComboBox;
     
+    ReadFiles readFiles = new ReadFiles();
+    
     @FXML
-    private void StartButton(ActionEvent event) throws IOException {
-        System.out.println(difficultyComboBox.getValue().toString());
-            
+    private void StartButton(ActionEvent event) throws IOException, ParseException {
+        System.out.println(readFiles.readJsonFiles(difficultyComboBox.getValue().toString()));
+        
        
     }
     

@@ -38,8 +38,8 @@ public class Proyecto3_Programacion2 extends Application {
         launch(args);
         
 //        Configuration configuration = new Configuration();
-//        ReadFiles.readJsonFiles(1).toString();
-//        
+//        ReadFiles.readJsonFiles();
+        
 //        configuration.toString();
     }
     

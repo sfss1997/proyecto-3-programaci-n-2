@@ -15,13 +15,13 @@ public class Player {
     private int defense;
     private int shortAttack;
     private int LongAttack;
-    private int delay;
+    private float delay;
     private int range;
 
     public Player() {
     }
 
-    public Player(int visionRange, int defense, int shortAttack, int LongAttack, int delay, int range) {
+    public Player(int visionRange, int defense, int shortAttack, int LongAttack, float delay, int range) {
         this.visionRange = visionRange;
         this.defense = defense;
         this.shortAttack = shortAttack;
@@ -62,11 +62,11 @@ public class Player {
         this.LongAttack = LongAttack;
     }
 
-    public int getDelay() {
+    public float getDelay() {
         return delay;
     }
 
-    public void setDelay(int delay) {
+    public void setDelay(float delay) {
         this.delay = delay;
     }
 
@@ -82,8 +82,6 @@ public class Player {
     public String toString() {
         return "Player{" + "visionRange=" + visionRange + ", defense=" + defense + ", shortAttack=" + shortAttack + ", LongAttack=" + LongAttack + ", delay=" + delay + ", range=" + range + '}';
     }
-    
-    
     
     
 }

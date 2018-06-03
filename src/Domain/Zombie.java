@@ -13,13 +13,13 @@ public class Zombie {
     
     private int defense;
     private int shortAttack;
-    private int delay;
+    private float delay;
     private int range;
 
     public Zombie() {
     }
 
-    public Zombie(int defense, int shortAttack, int delay, int range) {
+    public Zombie(int defense, int shortAttack, float delay, int range) {
         this.defense = defense;
         this.shortAttack = shortAttack;
         this.delay = delay;
@@ -42,11 +42,11 @@ public class Zombie {
         this.shortAttack = shortAttack;
     }
 
-    public int getDelay() {
+    public float getDelay() {
         return delay;
     }
 
-    public void setDelay(int delay) {
+    public void setDelay(float delay) {
         this.delay = delay;
     }
 
@@ -62,6 +62,8 @@ public class Zombie {
     public String toString() {
         return "Zombie{" + "defense=" + defense + ", shortAttack=" + shortAttack + ", delay=" + delay + ", range=" + range + '}';
     }
+
+    
     
     
 }

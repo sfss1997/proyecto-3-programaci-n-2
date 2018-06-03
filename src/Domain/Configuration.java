@@ -100,7 +100,7 @@ public class Configuration {
 
     @Override
     public String toString() {
-        return "Configuration{" + "saveFile=" + saveFile + ", width=" + width + ", height=" + height + ", type=" + type + ", probabilities=" + probabilities + ", player=" + player + ", chimera=" + chimera + ", zombie=" + zombie + '}';
+        return "Configuration{" + "\nsaveFile=" + saveFile + ",\n width=" + width + ",\n height=" + height + ",\n type=" + type + ",\n probabilities=" + probabilities + ",\n player=" + player + ",\n chimera=" + chimera + ",\n zombie=" + zombie + '}';
     }
     
     

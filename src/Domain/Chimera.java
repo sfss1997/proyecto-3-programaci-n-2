@@ -14,13 +14,13 @@ public class Chimera {
     private int defense;
     private int shortAttack;        
     private int LongAttack;
-    private int delay;
+    private float delay;
     private int range;
 
     public Chimera() {
     }
 
-    public Chimera(int defense, int shortAttack, int LongAttack, int delay, int range) {
+    public Chimera(int defense, int shortAttack, int LongAttack, float delay, int range) {
         this.defense = defense;
         this.shortAttack = shortAttack;
         this.LongAttack = LongAttack;
@@ -52,11 +52,11 @@ public class Chimera {
         this.LongAttack = LongAttack;
     }
 
-    public int getDelay() {
+    public float getDelay() {
         return delay;
     }
 
-    public void setDelay(int delay) {
+    public void setDelay(float delay) {
         this.delay = delay;
     }
 
