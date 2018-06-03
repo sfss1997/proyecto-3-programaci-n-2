@@ -32,8 +32,8 @@ public class MenuController implements Initializable {
     
     @FXML
     private void StartButton(ActionEvent event) throws IOException {
-        System.out.println("You clicked me!");
-       
+        System.out.println(difficultyComboBox.getValue().toString());
+            
        
     }
     
