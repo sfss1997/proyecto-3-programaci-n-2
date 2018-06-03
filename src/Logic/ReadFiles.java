@@ -23,7 +23,7 @@ import org.json.simple.parser.ParseException;
  */
 public class ReadFiles {
     
-    public static Configuration readJsonFiles(int difficulty) throws IOException, ParseException{
+    public static Configuration readJsonFiles(String difficulty) throws IOException, ParseException{
        
         Configuration configuration = new Configuration();
         Probabilities probabilities = new Probabilities();
@@ -33,16 +33,16 @@ public class ReadFiles {
         
         String url = ""; 
         switch(difficulty){
-            case 1:
+            case "Easy":
                 url="easy.json";
             break;
-            case 2:
+            case "Normal":
                 url="normal.json";
             break;
-            case 3:
+            case "Hard":
                 url="hard.json";
             break;
-            case 4:
+            case "Nightmare":
                 url="nightmare.json";
             break;
         }
