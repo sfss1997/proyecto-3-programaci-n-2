@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
 /**
@@ -19,12 +20,12 @@ import javafx.scene.control.Label;
 public class MenuController implements Initializable {
     
     @FXML
-    private Label label;
+    ComboBox difficultyComboBox;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
+    private void StartButton(ActionEvent event) {
         System.out.println("You clicked me!");
-        label.setText("Hello World!");
+       
     }
     
     @Override
