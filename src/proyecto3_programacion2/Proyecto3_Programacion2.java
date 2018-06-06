@@ -12,6 +12,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import org.json.simple.parser.ParseException;
 
@@ -20,14 +21,23 @@ import org.json.simple.parser.ParseException;
  * @author fabian
  */
 public class Proyecto3_Programacion2 extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
-        
+        Parent root = FXMLLoader.load(getClass().getResource("GamePanel.fxml"));
+
         Scene scene = new Scene(root);
+        scene.getRoot().requestFocus();
+        
+        scene.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.A) {
+                System.out.println("A key was pressed");
+            }
+        });
         
         stage.setScene(scene);
+        stage.setTitle("Pacman :v");
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -36,11 +46,10 @@ public class Proyecto3_Programacion2 extends Application {
      */
     public static void main(String[] args) throws IOException, ParseException {
         launch(args);
-        
+
 //        Configuration configuration = new Configuration();
 //        ReadFiles.readJsonFiles();
-        
 //        configuration.toString();
     }
-    
+
 }
