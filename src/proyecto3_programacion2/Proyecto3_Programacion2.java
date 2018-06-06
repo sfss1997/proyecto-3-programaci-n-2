@@ -6,6 +6,7 @@
 package proyecto3_programacion2;
 
 import Domain.Configuration;
+import Logic.Logic;
 import Logic.ReadFiles;
 import java.io.IOException;
 import javafx.application.Application;
@@ -22,6 +23,8 @@ import org.json.simple.parser.ParseException;
  */
 public class Proyecto3_Programacion2 extends Application {
 
+    Logic logic = new Logic();
+    
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("GamePanel.fxml"));
@@ -30,9 +33,7 @@ public class Proyecto3_Programacion2 extends Application {
         scene.getRoot().requestFocus();
         
         scene.setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.A) {
-                System.out.println("A key was pressed");
-            }
+            logic.x(e);
         });
         
         stage.setScene(scene);

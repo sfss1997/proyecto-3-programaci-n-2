@@ -34,7 +34,9 @@ public class GamePanelController implements Initializable {
     private GridPane gridPane;
     private Cell cell[][];
     private Logic logic;
-    
+    private int playerRow;
+    private int playerColumn;
+
     @FXML
     private AnchorPane anchorTest;
 
@@ -46,44 +48,45 @@ public class GamePanelController implements Initializable {
         // TODO
         logic = new Logic();
         createGridPane();
-        this.cell[1][1].setImageView(new ImageView("/Images/right2.gif"));
-        addKeyAction();
-    }    
-    
-    private void createGridPane(){
+        playerRow = 3;
+        playerColumn = 3;
+        this.cell[playerRow][playerColumn].setImageView(new ImageView("/Images/right2.gif"));
+        this.cell[playerRow][playerColumn].setId(2);
+
+//        addKeyAction();
+    }
+
+    private void createGridPane() {
         this.anchorTest.getChildren().clear();
 
-            this.cell = new Cell[8][8];
-            this.gridPane = new GridPane();
+        this.cell = new Cell[8][8];
+        this.gridPane = new GridPane();
 
-            //Crea el GridPane
-            this.gridPane = this.logic.createGridPane(8, 8, this.cell);
+        //Crea el GridPane
+        this.gridPane = this.logic.createGridPane(8, 8, this.cell);
 
-            //Añade el GridPane al AnchorPane
-            this.anchorTest = this.logic.addGridPaneToAnchorPane(this.anchorTest, this.gridPane);
-            
-            
-            
+        //Añade el GridPane al AnchorPane
+        this.anchorTest = this.logic.addGridPaneToAnchorPane(this.anchorTest, this.gridPane);
+
     }
-    
-    public void addKeyAction(){
-        this.gridPane.setOnKeyPressed(e ->{
+
+    public void addKeyAction() {
+        this.gridPane.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.LEFT) {
                 System.out.println("aaaaaa");
-                } else if (e.getCode() == KeyCode.RIGHT) {
-                    System.out.println("aaaaaa");
-                    cell[1][2].setImageView(new ImageView("/Images/right2.gif"));
-                    cell[1][1].setImageView(new ImageView("/Images/fondonegro.png"));
-                } else if (e.getCode() == KeyCode.UP) {
-System.out.println("aaaaaa");
-                } else if (e.getCode() == KeyCode.DOWN) {
-System.out.println("aaaaaa");
-                } else if (e.getCode() == KeyCode.A){
-                    System.out.println("AAAAAAAAAA");
-                }
+            } else if (e.getCode() == KeyCode.RIGHT) {
+                System.out.println("aaaaaa");
+                cell[1][2].setImageView(new ImageView("/Images/right2.gif"));
+                cell[1][1].setImageView(new ImageView("/Images/fondonegro.png"));
+            } else if (e.getCode() == KeyCode.UP) {
+                System.out.println("aaaaaa");
+            } else if (e.getCode() == KeyCode.DOWN) {
+                System.out.println("aaaaaa");
+            } else if (e.getCode() == KeyCode.A) {
+                System.out.println("AAAAAAAAAA");
+            }
         });
-                
-            
+
 //        addKeyAction(new KeyListener() {
 //            @Override
 //            public void keyTyped(KeyEvent ke) {
@@ -110,15 +113,44 @@ System.out.println("aaaaaa");
 ////                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //            }
 //        });
-
     }
 
+    public void setCell(Cell[][] cell) {
+        this.cell = cell;
+    }
 
-
-    @FXML
     private void x(ActionEvent event) {
         cell[1][2].setImageView(new ImageView("/Images/right2.gif"));
-                    cell[1][1].setImageView(new ImageView("/Images/fondonegro.png"));
+        cell[1][1].setImageView(new ImageView("/Images/fondonegro.png"));
     }
-    
+
+    @FXML
+    private void arriba(ActionEvent event) {
+        this.cell[playerRow][playerColumn].setIdAndImageView(1);
+            playerRow--;
+ 
+        this.cell[playerRow][playerColumn].setIdAndImageView(2);
+    }
+
+    @FXML
+    private void abajo(ActionEvent event) {
+        this.cell[playerRow][playerColumn].setIdAndImageView(1);
+            playerRow++;
+        this.cell[playerRow][playerColumn].setIdAndImageView(2);
+    }
+
+    @FXML
+    private void izq(ActionEvent event) {
+        this.cell[playerRow][playerColumn].setIdAndImageView(1);
+            playerColumn++;
+        this.cell[playerRow][playerColumn].setIdAndImageView(2);
+    }
+
+    @FXML
+    private void der(ActionEvent event) {
+        this.cell[playerRow][playerColumn].setIdAndImageView(1);
+            playerColumn--;
+        this.cell[playerRow][playerColumn].setIdAndImageView(2);
+    }
+
 }

@@ -19,42 +19,16 @@ import javax.xml.parsers.ParserConfigurationException;
 public class Cell extends Pane {
 
     private ImageView imageView;
-//    private SpriteController spriteController;
-//    private ImagesAdministration xmlArchives;
+    private int id;
     private int row;
     private int column;
-    private String url;
 
     public Cell() {
-            setStyle("-fx-border-color : black");
-            this.setPrefSize(100, 100);
-            this.setOnMouseClicked(e -> handleClick());
-            this.url = "";
-            this.imageView = new ImageView("/Images/fondonegro.png");
-            this.getChildren().add(imageView);
-    }
-
-    /**
-     * Se ejecuta cuando se da click en una celda.
-     */
-    private void handleClick() {
-//        try {
-//            String selectedItem = spriteController.getSelectedItem();
-//            if (!selectedItem.equals("")) {
-//                for (int i = 0; i < xmlArchives.readXml().size(); i++) {
-//                    if (xmlArchives.readXml().get(i).getName().equals(selectedItem)) {
-//                        this.getChildren().clear();
-//                        this.getChildren().add(new ImageView(xmlArchives.readXml().get(i).getUrl()));
-//                        setUrl(xmlArchives.readXml().get(i).getUrl());
-//                    }
-//                }
-//            } else {
-//                this.getChildren().clear();
-//                this.url = "";
-//            }
-//        } catch (Exception ex) {
-//            Logger.getLogger(Cell.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+        setStyle("-fx-border-color : black");
+        this.setPrefSize(100, 100);
+        this.imageView = new ImageView("/Images/fondonegro.png");
+        this.getChildren().add(imageView);
+        this.id = 1;
     }
 
     public int getRow() {
@@ -73,14 +47,6 @@ public class Cell extends Pane {
         this.column = column;
     }
 
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
     public ImageView getImageView() {
         return imageView;
     }
@@ -88,6 +54,26 @@ public class Cell extends Pane {
     public void setImageView(ImageView imageView) {
         this.getChildren().clear();
         this.getChildren().add(imageView);
+    }
+
+    public int getID() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setIdAndImageView(int id) {
+        if (id == 1) {
+            this.getChildren().clear();
+            this.imageView = new ImageView("/Images/fondonegro.png");
+            this.getChildren().add(imageView);
+        } else if(id == 2){
+            this.getChildren().clear();
+            this.imageView = new ImageView("/Images/right2.gif");
+            this.getChildren().add(imageView);
+        }
     }
 
 }

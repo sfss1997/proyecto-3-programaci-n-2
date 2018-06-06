@@ -6,6 +6,7 @@
 package Logic;
 
 import javafx.scene.Node;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
@@ -17,11 +18,14 @@ import javafx.scene.layout.GridPane;
  */
 public class Logic {
 
+    private Cell[][] cell;
+
     public Logic() {
     }
 
     /**
      * Crea un GridPane.
+     *
      * @param rows
      * @param columns
      * @param cell
@@ -37,12 +41,14 @@ public class Logic {
                 newGridPane.add(cell[i][j], j, i);
             }
         }
+        this.cell = cell;
         newGridPane.setStyle("-fx-cursor : hand");
         return newGridPane;
     }
-    
+
     /**
      * Añade un GridPane a un AnchorPane.
+     *
      * @param anchorPane
      * @param gridPane
      * @return Retorna el AnchorPane con el GridPane.
@@ -57,8 +63,10 @@ public class Logic {
 
     /**
      * Valida si la tecla precionada es un número o no.
+     *
      * @param event
-     * @return Retorna true si la tecla presionada es un número y un false si no lo es.
+     * @return Retorna true si la tecla presionada es un número y un false si no
+     * lo es.
      */
     public boolean isNumeric(KeyEvent event) {
         char charType = event.getCharacter().charAt(0);
@@ -67,11 +75,22 @@ public class Logic {
         }
         return false;
     }
-    
-    public void x(KeyEvent e){
-        if (e.getCode() == KeyCode.A) {
-                System.out.println("A key was pressed");
-            }
+
+    public void x(KeyEvent e) {
+        if (e.getCode() == KeyCode.LEFT) {
+            System.out.println("aaaaaa");
+        } else if (e.getCode() == KeyCode.RIGHT) {
+            System.out.println("aaaaaa");
+            cell[1][2].setImageView(new ImageView("/Images/right2.gif"));
+            cell[1][1].setImageView(new ImageView("/Images/fondonegro.png"));
+            
+        } else if (e.getCode() == KeyCode.UP) {
+            System.out.println("aaaaaa");
+        } else if (e.getCode() == KeyCode.DOWN) {
+            System.out.println("aaaaaa");
+        } else if (e.getCode() == KeyCode.A) {
+            System.out.println("AAAAAAAAAA");
+        }
     }
 
 }
