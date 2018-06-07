@@ -25,10 +25,10 @@ public class Logic {
     public Logic() {
         init();
     }
-    
-    private void init(){
-        if(cell == null){
-            this.cell = new Cell[8][8];
+
+    private void init() {
+        if (cell == null) {
+            this.cell = new Cell[8][7];
             this.playerRow = 3;
             this.playerColumn = 3;
         }
@@ -45,7 +45,7 @@ public class Logic {
     public GridPane createGridPane() {
         GridPane newGridPane = new GridPane();
         for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
+            for (int j = 0; j < 7; j++) {
                 cell[i][j] = new Cell();
                 cell[i][j].setRow(i);
                 cell[i][j].setColumn(j);
@@ -85,28 +85,36 @@ public class Logic {
         }
         return false;
     }
-    
-    public void up(){
+
+    public void up() {
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(1);
+        if (this.playerRow > 0) {
             this.playerRow--;
+        }
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);
     }
-    
-    public void down(){
+
+    public void down() {
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(1);
+        if (playerRow < this.cell.length-1) {
             this.playerRow++;
+        }
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);
     }
-    
-    public void left(){
+
+    public void left() {
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(1);
+        if (this.playerColumn > 0) {
             this.playerColumn--;
+        }
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);
     }
-    
-    public void right(){
+
+    public void right() {
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(1);
+        if (playerColumn < this.cell[0].length-1) {
             this.playerColumn++;
+        }
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);
     }
 
