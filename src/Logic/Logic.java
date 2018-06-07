@@ -86,33 +86,33 @@ public class Logic {
         return false;
     }
 
-    public void up() {
+    public void playerUp() {
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(1);
-        if (this.playerRow > 0) {
+        if (this.playerRow > 0 && this.cell[this.playerRow-1][this.playerColumn].getID() == 1) {
             this.playerRow--;
         }
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);
     }
 
-    public void down() {
+    public void playerDown() {
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(1);
-        if (playerRow < this.cell.length-1) {
+        if (playerRow < this.cell.length-1 && this.cell[this.playerRow+1][this.playerColumn].getID() == 1) {
             this.playerRow++;
         }
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);
     }
 
-    public void left() {
+    public void playerLeft() {
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(1);
-        if (this.playerColumn > 0) {
+        if (this.playerColumn > 0 && this.cell[this.playerRow][this.playerColumn-1].getID() == 1) {
             this.playerColumn--;
         }
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);
     }
 
-    public void right() {
+    public void playerRight() {
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(1);
-        if (playerColumn < this.cell[0].length-1) {
+        if (playerColumn < this.cell[0].length-1 && this.cell[this.playerRow][this.playerColumn+1].getID() == 1) {
             this.playerColumn++;
         }
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);

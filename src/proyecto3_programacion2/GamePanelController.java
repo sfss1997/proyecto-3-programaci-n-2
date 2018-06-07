@@ -67,13 +67,13 @@ public class GamePanelController implements Initializable {
     public void addKeyAction() {
         anchorTest.setOnKeyPressed(e ->{
             if(e.getCode() == KeyCode.RIGHT){
-                this.logic.right();
+                this.logic.playerRight();
             } else if(e.getCode() == KeyCode.LEFT){
-                this.logic.left();
+                this.logic.playerLeft();
             } else if(e.getCode() == KeyCode.UP){
-                this.logic.up();
+                this.logic.playerUp();
             } else if(e.getCode() == KeyCode.DOWN){
-                this.logic.down();
+                this.logic.playerDown();
             }
         });
     }
