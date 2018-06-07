@@ -100,13 +100,13 @@ public class Logic {
     
     public void left(){
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(1);
-            this.playerColumn++;
+            this.playerColumn--;
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);
     }
     
     public void right(){
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(1);
-            this.playerColumn--;
+            this.playerColumn++;
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);
     }
 

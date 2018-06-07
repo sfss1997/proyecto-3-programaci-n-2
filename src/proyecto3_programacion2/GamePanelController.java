@@ -63,29 +63,35 @@ public class GamePanelController implements Initializable {
     public void addKeyAction() {
         anchorTest.setOnKeyPressed(e ->{
             if(e.getCode() == KeyCode.RIGHT){
-                System.out.println("Majaste la caca");
+                this.logic.right();
+            } else if(e.getCode() == KeyCode.LEFT){
+                this.logic.left();
+            } else if(e.getCode() == KeyCode.UP){
+                this.logic.up();
+            } else if(e.getCode() == KeyCode.DOWN){
+                this.logic.down();
             }
         });
     }
 
     @FXML
     private void arriba(ActionEvent event) throws InterruptedException {
-        this.logic.up();
+        
     }
 
     @FXML
     private void abajo(ActionEvent event) {
-        this.logic.down();
+        
     }
 
     @FXML
     private void izq(ActionEvent event) {
-        this.logic.left();
+        
     }
 
     @FXML
     private void der(ActionEvent event) {
-        this.logic.right();
+        
     }
 
 }
