@@ -32,10 +32,6 @@ public class Proyecto3_Programacion2 extends Application {
         Scene scene = new Scene(root);
         scene.getRoot().requestFocus();
         
-        scene.setOnKeyPressed(e -> {
-            logic.x(e);
-        });
-        
         stage.setScene(scene);
         stage.setTitle("Pacman :v");
         stage.setResizable(false);

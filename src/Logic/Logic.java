@@ -18,9 +18,20 @@ import javafx.scene.layout.GridPane;
  */
 public class Logic {
 
-    private Cell[][] cell;
+    private static Cell[][] cell;
+    private static int playerRow;
+    private static int playerColumn;
 
     public Logic() {
+        init();
+    }
+    
+    private void init(){
+        if(cell == null){
+            this.cell = new Cell[8][8];
+            this.playerRow = 3;
+            this.playerColumn = 3;
+        }
     }
 
     /**
@@ -31,18 +42,17 @@ public class Logic {
      * @param cell
      * @return Retorna el GridPane
      */
-    public GridPane createGridPane(int rows, int columns, Cell[][] cell) {
+    public GridPane createGridPane() {
         GridPane newGridPane = new GridPane();
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
                 cell[i][j] = new Cell();
                 cell[i][j].setRow(i);
                 cell[i][j].setColumn(j);
                 newGridPane.add(cell[i][j], j, i);
             }
         }
-        this.cell = cell;
-        newGridPane.setStyle("-fx-cursor : hand");
+        this.cell[playerRow][playerColumn].setIdAndImageView(2);
         return newGridPane;
     }
 
@@ -75,22 +85,33 @@ public class Logic {
         }
         return false;
     }
+    
+    public void up(){
+        this.cell[this.playerRow][this.playerColumn].setIdAndImageView(1);
+            this.playerRow--;
+        this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);
+    }
+    
+    public void down(){
+        this.cell[this.playerRow][this.playerColumn].setIdAndImageView(1);
+            this.playerRow++;
+        this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);
+    }
+    
+    public void left(){
+        this.cell[this.playerRow][this.playerColumn].setIdAndImageView(1);
+            this.playerColumn++;
+        this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);
+    }
+    
+    public void right(){
+        this.cell[this.playerRow][this.playerColumn].setIdAndImageView(1);
+            this.playerColumn--;
+        this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);
+    }
 
-    public void x(KeyEvent e) {
-        if (e.getCode() == KeyCode.LEFT) {
-            System.out.println("aaaaaa");
-        } else if (e.getCode() == KeyCode.RIGHT) {
-            System.out.println("aaaaaa");
-            cell[1][2].setImageView(new ImageView("/Images/right2.gif"));
-            cell[1][1].setImageView(new ImageView("/Images/fondonegro.png"));
-            
-        } else if (e.getCode() == KeyCode.UP) {
-            System.out.println("aaaaaa");
-        } else if (e.getCode() == KeyCode.DOWN) {
-            System.out.println("aaaaaa");
-        } else if (e.getCode() == KeyCode.A) {
-            System.out.println("AAAAAAAAAA");
-        }
+    public static Cell[][] getCell() {
+        return cell;
     }
 
 }
