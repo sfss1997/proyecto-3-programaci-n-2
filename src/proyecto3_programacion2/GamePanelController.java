@@ -43,9 +43,9 @@ public class GamePanelController implements Initializable {
         logic = new Logic();
         createGridPane();
         
-        Hilo hilo = new Hilo();
-        Thread thread = new Thread((Runnable) hilo);
-        thread.start();
+//        Hilo hilo = new Hilo();
+//        Thread thread = new Thread((Runnable) hilo);
+//        thread.start();
 
         addKeyAction();
     }
@@ -74,28 +74,20 @@ public class GamePanelController implements Initializable {
                 this.logic.playerUp();
             } else if(e.getCode() == KeyCode.DOWN){
                 this.logic.playerDown();
+                
+            }
+        });
+        
+        anchorTest.setOnKeyReleased(e -> {
+            if(e.isControlDown() && e.getCode() == KeyCode.RIGHT){
+                this.logic.removeEarthRight();
+            } else if(e.isControlDown() && e.getCode() == KeyCode.LEFT){
+                this.logic.removeEarthLeft();
+            } else if(e.isControlDown() && e.getCode() == KeyCode.UP){
+                this.logic.removeEarthUp();
             }
         });
     }
 
-    @FXML
-    private void arriba(ActionEvent event) throws InterruptedException {
-        
-    }
-
-    @FXML
-    private void abajo(ActionEvent event) {
-        
-    }
-
-    @FXML
-    private void izq(ActionEvent event) {
-        
-    }
-
-    @FXML
-    private void der(ActionEvent event) {
-        
-    }
 
 }

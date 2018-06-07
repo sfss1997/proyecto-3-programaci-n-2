@@ -65,17 +65,20 @@ public class Cell extends Pane {
     }
 
     public void setIdAndImageView(int id) {
-        if (id == 1) {
+        if (id == 0) {
+            this.id = 0;
+            this.getChildren().clear();
+        } else if (id == 1) {
             this.id = id;
             this.getChildren().clear();
             this.imageView = new ImageView("/Images/fondonegro.png");
             this.getChildren().add(imageView);
-        } else if(id == 2){
+        } else if (id == 2) {
             this.id = id;
             this.getChildren().clear();
             this.imageView = new ImageView("/Images/right2.gif");
             this.getChildren().add(imageView);
-        } else if (id == 3){
+        } else if (id == 3) {
             this.id = id;
             this.getChildren().clear();
             this.imageView = new ImageView("/Images/ghost.gif");
