@@ -6,6 +6,7 @@
 package proyecto3_programacion2;
 
 import Domain.Configuration;
+import Logic.Hilo;
 import Logic.Logic;
 import Logic.ReadFiles;
 import java.io.IOException;
@@ -36,14 +37,19 @@ public class Proyecto3_Programacion2 extends Application {
         stage.setTitle("Pacman :v");
         stage.setResizable(false);
         stage.show();
+        
+        
     }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException, ParseException {
+      
+        
         launch(args);
-
+       
+       
 //        Configuration configuration = new Configuration();
 //        ReadFiles.readJsonFiles();
 //        configuration.toString();

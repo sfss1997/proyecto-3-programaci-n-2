@@ -6,6 +6,7 @@
 package proyecto3_programacion2;
 
 import Logic.Cell;
+import Logic.Hilo;
 import Logic.Logic;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -42,6 +43,9 @@ public class GamePanelController implements Initializable {
         logic = new Logic();
         createGridPane();
         
+        Hilo hilo = new Hilo();
+        Thread thread = new Thread((Runnable) hilo);
+        thread.start();
 
         addKeyAction();
     }

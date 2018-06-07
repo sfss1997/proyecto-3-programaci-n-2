@@ -18,7 +18,7 @@ import javafx.scene.layout.GridPane;
  */
 public class Logic {
 
-    private static Cell[][] cell;
+    public static Cell[][] cell;
     private static int playerRow;
     private static int playerColumn;
 
@@ -118,8 +118,9 @@ public class Logic {
         this.cell[this.playerRow][this.playerColumn].setIdAndImageView(2);
     }
 
-    public static Cell[][] getCell() {
+    public Cell[][] getCell() {
         return cell;
     }
 
+    
 }
