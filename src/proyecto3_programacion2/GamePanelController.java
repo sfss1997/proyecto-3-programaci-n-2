@@ -62,8 +62,8 @@ public class GamePanelController implements Initializable {
 
     public void addKeyAction() {
         anchorTest.setOnKeyPressed(e ->{
-            if(e.getCode() == KeyCode.A){
-                System.out.println("alv");
+            if(e.getCode() == KeyCode.RIGHT){
+                System.out.println("Majaste la caca");
             }
         });
     }

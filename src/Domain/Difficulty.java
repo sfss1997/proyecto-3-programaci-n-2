@@ -9,15 +9,6 @@ package Domain;
  *
  * @author fabian
  */
-public class Chimera extends Status{
-
-    public Chimera(int x, int y, int lives, boolean status) {
-        super(x, y, lives, status);
-    }
-
-    public Chimera() {
-    }
-
-    
-    
+public enum Difficulty {
+    Easy,Normal,Hard,Nightmare;
 }

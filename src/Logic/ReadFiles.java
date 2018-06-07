@@ -5,11 +5,11 @@
  */
 package Logic;
 
-import Domain.Chimera;
+import Domain.ChimeraConfiguration;
 import Domain.Configuration;
-import Domain.Player;
-import Domain.Probabilities;
-import Domain.Zombie;
+import Domain.PlayerConfiguration;
+import Domain.ProbabilitiesConfiguration;
+import Domain.ZombieConfiguration;
 import java.io.FileReader;
 import java.io.IOException;
 import org.json.simple.*;
@@ -26,10 +26,11 @@ public class ReadFiles {
     public Configuration readJsonFiles(String difficulty) throws IOException, ParseException{
        
         Configuration configuration = new Configuration();
-        Probabilities probabilities = new Probabilities();
-        Player player = new Player();
-        Chimera chimera = new Chimera();
-        Zombie zombie = new Zombie();
+        ProbabilitiesConfiguration probabilities = new ProbabilitiesConfiguration();
+        PlayerConfiguration player = new PlayerConfiguration();
+        ChimeraConfiguration chimera = new ChimeraConfiguration();
+        ZombieConfiguration zombie = new ZombieConfiguration();
+        
         
         String url = ""; 
         switch(difficulty){

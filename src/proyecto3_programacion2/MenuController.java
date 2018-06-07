@@ -5,6 +5,11 @@
  */
 package proyecto3_programacion2;
 
+import Domain.Difficulty;
+import static Domain.Difficulty.Easy;
+import static Domain.Difficulty.Hard;
+import static Domain.Difficulty.Nightmare;
+import static Domain.Difficulty.Normal;
 import Logic.ReadFiles;
 import java.io.IOException;
 import java.net.URL;
@@ -32,6 +37,7 @@ public class MenuController implements Initializable {
     @FXML
     ComboBox difficultyComboBox;
     
+    
     ReadFiles readFiles = new ReadFiles();
     
     @FXML
@@ -44,7 +50,7 @@ public class MenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        difficultyComboBox.getItems().addAll("Easy", "Normal", "Hard","Nightmare");
+        difficultyComboBox.getItems().addAll(Easy, Normal, Hard,Nightmare);
     }    
     
 }

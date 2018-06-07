@@ -9,15 +9,15 @@ package Domain;
  *
  * @author fabian
  */
-public class Probabilities {
+public class ProbabilitiesConfiguration {
     private int stone;
     private int zombie;
     private int chimera;
 
-    public Probabilities() {
+    public ProbabilitiesConfiguration() {
     }
 
-    public Probabilities(int stone, int zombie, int chimera) {
+    public ProbabilitiesConfiguration(int stone, int zombie, int chimera) {
         this.stone = stone;
         this.zombie = zombie;
         this.chimera = chimera;
