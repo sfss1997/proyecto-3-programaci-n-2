@@ -76,16 +76,20 @@ public class GamePanelController implements Initializable {
                 this.logic.playerDown();
                 
             }
-        });
-        
-        anchorTest.setOnKeyReleased(e -> {
+            
             if(e.isControlDown() && e.getCode() == KeyCode.RIGHT){
                 this.logic.removeEarthRight();
             } else if(e.isControlDown() && e.getCode() == KeyCode.LEFT){
                 this.logic.removeEarthLeft();
             } else if(e.isControlDown() && e.getCode() == KeyCode.UP){
                 this.logic.removeEarthUp();
+            } else if(e.isControlDown() && e.getCode() == KeyCode.DOWN){
+                this.logic.removeEarthDown();
             }
+        });
+        
+        anchorTest.setOnKeyReleased(e -> {
+            
         });
     }
 

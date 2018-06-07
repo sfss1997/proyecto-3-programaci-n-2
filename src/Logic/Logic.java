@@ -123,6 +123,12 @@ public class Logic {
             this.cell[this.playerRow - 1][this.playerColumn].setIdAndImageView(0);
         }
     }
+    
+    public void removeEarthDown(){
+        if (playerRow < this.cell.length - 1 && this.cell[this.playerRow + 1][this.playerColumn].getID() == 1) {
+            this.cell[this.playerRow + 1][this.playerColumn].setIdAndImageView(0);
+        }
+    }
 
     public void removeEarthLeft() {
         if (this.playerColumn > 0 && this.cell[this.playerRow][this.playerColumn - 1].getID() == 1) {
